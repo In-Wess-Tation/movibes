@@ -4,6 +4,12 @@ import { NavLink } from "react-router-dom";
 import Boks from "./Boks";
 import Logo from "./Logo";
 
+import { GrHomeRounded } from "react-icons/gr";
+import { BiCameraMovie } from "react-icons/bi";
+import { CgScreen } from "react-icons/cg";
+import { BsCalendar3 } from "react-icons/bs";
+import { BiLogIn } from "react-icons/bi";
+
 
 const Header = () => {
 
@@ -12,17 +18,21 @@ const Header = () => {
     width: 15rem;
     height: 100vh;
     position: sticky;
+    top: 0;
+    
+    .logo {
+        text-shadow: 0px 0px 5px #3DD2CC;
+    }
 
     `
     let normalStyle = {
         height: "3rem",
         display: "flex", 
-        justifyContent: "center",
-        alignItems: "center",
         fontSize: "1.5rem",
         height: "4rem",
         textDecoration: "none", 
-        color: "grey"
+        color: "grey",
+        paddingLeft: "2rem",
     }
     let activeStyle = {
         backgroundColor: "#3dd2cd73",
@@ -30,40 +40,41 @@ const Header = () => {
         color: "#3DD2CC",
         height: "3rem",
         display: "flex", 
-        justifyContent: "center",
-        alignItems: "center",
+        paddingLeft: "2rem",
         fontSize: "1.5rem",
         height: "4rem",
         borderRight: "5px solid #3DD2CC"
+
+        
     }
 
     return ( 
         <section css={styled}>
-            <Logo>Movibes</Logo>
+            <Logo className="logo">Movibes</Logo>
             <NavLink
                 to="/"
                 style={({ isActive }) =>
             isActive ? activeStyle : normalStyle
             }
-            >Home</NavLink>
+            ><p><GrHomeRounded/> Home</p></NavLink>
             <NavLink
                 to="movies"
                 style={({ isActive }) =>
             isActive ? activeStyle : normalStyle
             }
-            >Movies</NavLink>
+            ><p><BiCameraMovie/> Movie</p></NavLink>
             <NavLink
                 to="/tvSeries"
                 style={({ isActive }) =>
             isActive ? activeStyle : normalStyle
             }
-            >TV Series</NavLink>
+            ><p><CgScreen/> TV Series</p></NavLink>
             <NavLink
                 to="/upcoming"
                 style={({ isActive }) =>
             isActive ? activeStyle : normalStyle
             }
-            >Upcoming</NavLink>
+            ><p><BsCalendar3 /> Upcoming</p></NavLink>
 
             <Boks />
 
@@ -72,7 +83,7 @@ const Header = () => {
                 style={({ isActive }) =>
             isActive ? activeStyle : normalStyle
             }
-            >Log out</NavLink>
+            ><p><BiLogIn/> Log out</p></NavLink>
         </section>
      );
 }

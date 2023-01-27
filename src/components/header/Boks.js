@@ -33,6 +33,7 @@ const Boks = () => {
         color: #3DD2CC;
         padding: 0.5rem;
         text-align: center;
+        margin-top: 1.5rem;
     }
     
     `
