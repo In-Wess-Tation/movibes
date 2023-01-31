@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Boks from "./Boks";
 import Logo from "./Logo";
 
-import { GrHomeRounded } from "react-icons/gr";
+import { VscHome } from "react-icons/vsc";
 import { BiCameraMovie } from "react-icons/bi";
 import { CgScreen } from "react-icons/cg";
 import { BsCalendar3 } from "react-icons/bs";
@@ -33,6 +33,7 @@ const Header = () => {
         textDecoration: "none", 
         color: "grey",
         paddingLeft: "2rem",
+        alignItems: "center"
     }
     let activeStyle = {
         backgroundColor: "#3dd2cd73",
@@ -43,8 +44,8 @@ const Header = () => {
         paddingLeft: "2rem",
         fontSize: "1.5rem",
         height: "4rem",
-        borderRight: "5px solid #3DD2CC"
-
+        borderRight: "5px solid #3DD2CC",
+        alignItems: "center"
         
     }
 
@@ -56,7 +57,7 @@ const Header = () => {
                 style={({ isActive }) =>
             isActive ? activeStyle : normalStyle
             }
-            ><p><GrHomeRounded/> Home</p></NavLink>
+            ><p><VscHome/> Home</p></NavLink>
             <NavLink
                 to="movies"
                 style={({ isActive }) =>

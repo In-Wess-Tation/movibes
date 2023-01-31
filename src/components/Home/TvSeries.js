@@ -34,8 +34,7 @@ let imgPath ="https://image.tmdb.org/t/p/original"
 let APIKey = "8aae96e730d41065f7cfa804530c488a"
 
     useEffect(() => {
-        axios(`
-        https://api.themoviedb.org/3/tv/popular?api_key=${APIKey}&language=en-US`)
+        axios(`https://api.themoviedb.org/3/tv/popular?api_key=${APIKey}&language=en-US`)
         .then((response) => setMovies(response.data.results))
         .catch((error) => setError("Something went wrong..."))
         .finally(() => setLoading(false))
