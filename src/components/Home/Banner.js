@@ -9,7 +9,7 @@ const Banner = () => {
     const styled = css`
             height: 19rem;
             width: 57rem; 
-            padding-bottom: 2rem;
+            padding-bottom: 5rem;
 
         img {
             height: 100%;
@@ -22,10 +22,12 @@ const Banner = () => {
         const [movies, setMovies] = useState();
         const [error, setError] = useState();
         const [loading, setLoading] = useState(true);
+        const [featured, setFeatured] = useState();
     
     let imgPath ="https://image.tmdb.org/t/p/original"
     let URLPath = "https://api.themoviedb.org/3/"
     let APIKey = "8aae96e730d41065f7cfa804530c488a"
+
     
         useEffect(() => {
             axios(`${URLPath}movie/now_playing?api_key=${APIKey}&language=en-US&page=1`)
@@ -33,6 +35,10 @@ const Banner = () => {
             .catch((error) => setError("Something went wrong..."))
             .finally(() => setLoading(false))
         }, []);
+
+        // useEffect(() => {
+        //     axios(`https://api.themoviedb.org/3/movie/${featured.id}/images?api_key=${APIKey}&language=en-US`)
+        // }, [featured]);
 
     return ( 
         <article css={styled}>

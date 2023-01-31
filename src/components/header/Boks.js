@@ -2,6 +2,8 @@
 import { css } from "@emotion/react";
 import BoksCirkel from "./BoksCirkel";
 
+import { FaTicketAlt } from "react-icons/fa"
+
 
 const Boks = () => {
 
@@ -23,7 +25,7 @@ const Boks = () => {
     h3 {
         color: white;
     }
-    p {
+    .grey {
         color: grey;
     }
     button {
@@ -35,15 +37,22 @@ const Boks = () => {
         text-align: center;
         margin-top: 1.5rem;
     }
+    .icon {
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 1rem;
+        color: #3DD2CC;
+        opacity: 100%;
+    }
     
     `
 
     return ( 
         <div css={styled}>
-           <BoksCirkel></BoksCirkel> 
+           <BoksCirkel><p className="icon"><FaTicketAlt/></p></BoksCirkel> 
            <div className="black">
             <h3>Play movie quizes and earn free tickets</h3>
-            <p>50k people are playing now</p>
+            <p className="grey">50k people are playing now</p>
             <button>Start playing</button>
            </div>
         </div>
