@@ -6,38 +6,38 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import { AiFillStar } from "react-icons/ai"
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 
 
-const Trending = () => {
+const Similar = () => {
+
+    const { movie_id } = useParams();
 
     const styled = css`
 
-    h2 {
-        padding-left: 2rem;
-    }
     img {
         height: 100%;
         border-radius: 1rem;
         position: relative;
+        margin-left: -5rem;
     }
     p {
         position: absolute;
         z-index: 10;
         background-color: #ffffff55;
         padding: 0.2rem 1rem;
-        border-radius: 0 1rem 0 1rem;
-        margin: 0 0 2rem 5.3rem;
+        border-radius: 0 1rem 0 1rem;        
+        margin: 0 0 2rem 0.3rem;
     }
     span {
         color: yellow;
     }
     .card {
-            display: flex;
-            justify-content: space-evenly;
-            padding: 1rem;
-        }
+        display: flex;
+        justify-content: space-evenly;
+    }
        
     `
 
@@ -46,11 +46,10 @@ const Trending = () => {
     const [loading, setLoading] = useState(true);
 
 let imgPath ="https://image.tmdb.org/t/p/original"
-let URLPath = "https://api.themoviedb.org/3/"
 let APIKey = "8aae96e730d41065f7cfa804530c488a"
 
     useEffect(() => {
-        axios(`${URLPath}movie/now_playing?api_key=${APIKey}&language=en-US&page=1`)
+        axios(`https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${APIKey}&language=en-US&page=1`)
         .then((response) => setMovies(response.data.results))
         .catch(() => setError("Something went wrong..."))
         .finally(() => setLoading(false))
@@ -60,7 +59,7 @@ let APIKey = "8aae96e730d41065f7cfa804530c488a"
 
     return ( 
         <section css={styled}>
-            <h2>Trending</h2>
+            <h2>Similar Movies</h2>
             <article className="card">
                 {error && <p>{error}</p>}
                 {loading && <p>Loading...</p>}
@@ -78,4 +77,4 @@ let APIKey = "8aae96e730d41065f7cfa804530c488a"
      );
 }
  
-export default Trending;
+export default Similar;

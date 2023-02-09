@@ -1,8 +1,12 @@
+import TvSeries from "../components/Home/TvSeries";
 
 
-
-const TvSeries = () => {
-    return ( <h1>Here is TV Series</h1> );
+const Tvseries = () => {
+    return ( 
+        <section>
+            <TvSeries />
+        </section>
+     );
 }
  
-export default TvSeries;
+export default Tvseries;

@@ -1,9 +1,11 @@
-
+import UpComing from "../components/Home/Upcoming";
 
 
 const Upcoming = () => {
     return ( 
-        <h1>Here is upcoming</h1>
+        <section>
+            <UpComing />
+        </section>
      );
 }
  
