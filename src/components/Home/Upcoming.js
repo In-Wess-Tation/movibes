@@ -66,7 +66,7 @@ let APIKey = "8aae96e730d41065f7cfa804530c488a"
 
             { movies?.map((movie, index) => (
                     index < 4 ? 
-                    <Link to={`/detail/${movie.id}`}><Card key={index} className="card"><p><span><AiFillStar/></span> {movie.vote_average}</p><img src={imgPath + movie.poster_path} alt="" /></Card></Link>
+                    <Link key={movie.id} to={`/detail/${movie.id}`}><Card key={index} className="card"><p><span><AiFillStar/></span> {movie.vote_average}</p><img src={imgPath + movie.poster_path} alt="" /></Card></Link>
                     : null
                     
                 ))}

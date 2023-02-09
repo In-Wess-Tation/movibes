@@ -3,15 +3,18 @@ import { css } from "@emotion/react";
 import User from "../components/Categories/User";
 
 
-import Banner from "../components/detail/Banner";
-import Cast from "../components/detail/Cast";
-import Info from "../components/detail/Info";
 import Search from "../components/Home/Search";
 
+import Banner from "../components/detail/Banner";
+import Info from "../components/detail/Info";
+import Cast from "../components/detail/Cast";
+import Similar from "../components/detail/SimilarMovies";
+
 import Notification from "../components/detail/Notification";
+import Ratings from "../components/detail/Ratings";
 import { FaUser } from "react-icons/fa"
 import { HiOutlineBell } from "react-icons/hi"
-import Ratings from "../components/detail/Ratings";
+import SideBar from "../components/detail/SideBar";
 
 const styled = css`
 padding-left: 2rem;
@@ -54,9 +57,11 @@ const Detail = () => {
             <div>
                 <Info />
                 <Cast />
+                <Similar />
             </div>
             <div>
                 <Ratings />
+                <SideBar />
             </div>
             </div>
         </section>

@@ -40,7 +40,6 @@ const Info = () => {
     font-size: 1rem;
    }
     `
-    console.log(movie)
     return ( 
         <article css={styled}>   
             {error && <p>{error}</p>}

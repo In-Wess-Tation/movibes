@@ -6,6 +6,7 @@ import { css } from "@emotion/react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { IoIosArrowDown } from "react-icons/io"
 
 const Cast = () => {
 
@@ -19,11 +20,11 @@ const Cast = () => {
     const styled = css`
     
     img {
-       height: 6rem;
-       width: 6rem;
-       border-radius: 3rem;
-       object-fit: cover;
-
+        height: 6rem;
+        width: 6rem;
+        border-radius: 3rem;
+        object-fit: cover;
+        margin-left: 3rem;
     }
     button {
         height: 3rem;
@@ -45,7 +46,25 @@ const Cast = () => {
     .grey {
         color: grey;
     }
-          
+    .line {
+        border-bottom: 2px solid #3f3e3e;
+        padding-bottom: 1rem;
+    }
+    .center {
+        text-align: center;
+    }
+    .allCast {
+        border-top: 2px solid #3f3e3e;
+        border-bottom: 2px solid #3f3e3e;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.5rem;
+        grid-column: 1/-1;
+    }
+    .icon {
+        font-size: 1.5rem;
+    }
+    
     `
 
     const [members, setMembers] = useState();
@@ -87,32 +106,36 @@ const Cast = () => {
         <article css={styled}> 
         {error && <p>{error}</p>}  
         {loading && <p>Loading...</p>}
-        {members?.crew.map((member, index) => (
+        {members?.crew.map((crew, index) => (
             index < 1 ?
-            <div>
-                <p>Director: <span>{director?.name}</span></p>
+            <div key={index}>
+                <p className="line">Director: <span>{director?.name}</span></p>
                 {writers?.length ? 
-                <p>Writers: {writers.map((writer) => (<span>{writer.name}, </span>))}</p> 
+                <p className="line">Writers: {writers.map((writer) => (<span key={writer.id}>{writer.name}, </span>))}</p> 
                 : null}
             </div>
             : null
         ))}
-            <p>Stars: {members?.crew.map((member, index) => {if(index < 4) return (<span>{member.name}, </span>)})}</p>
+            <p className="line">Stars: {members?.crew.map((member, index) => {if(index < 4) return (<span key={index}>{member.name}, </span>)})}</p>
 
             <button>Top rated movie #65</button>
-            <p>Top Cast </p>
+            <h2>Top Cast </h2>
             <article className="cast">
             {error && <p>{error}</p>}
             {loading && <p>Loading... </p>}
-            { members?.cast.map((member, index) => (
+            { members?.cast.map((cast, index) => (
                     index < 4 ? 
-                    <div>
-                        <img src={imgPath + member.profile_path} alt="" />
-                        <p>{member.name}</p>
-                        <p className="grey">{member.character}</p> 
+                    <div key={index}>
+                        <img src={imgPath + cast.profile_path} alt="" />
+                        <p className="center">{cast.name}</p>
+                        <p className="grey center">{cast.character}</p> 
                     </div> 
                     : null                    
                 ))}
+                <div className="allCast">
+                    <p>All cast & crew</p>
+                    <p><IoIosArrowDown className="icon"/></p>
+                </div>
             </article>
         </article>
      );// skriv /"et tal" oppe i url'en, for at komme ind på detailje siderne

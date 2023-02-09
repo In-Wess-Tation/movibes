@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useAxios from "../costumHooks/useAxios";
 
@@ -32,7 +31,7 @@ const styled = css`
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
     }
     .icon {
         font-size: 1.5rem;

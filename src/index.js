@@ -9,6 +9,7 @@ import Movies from './sites/Movies';
 import TvSeries from './sites/TvSeries';
 import Upcoming from './sites/Upcoming';
 import Logout from './sites/Logout';
+import Video from './sites/Video';
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<App />}>
@@ -17,6 +18,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/movies" element={<Movies />}/>
     <Route path="/tvSeries" element={<TvSeries />}/>
     <Route path="/upcoming" element={<Upcoming />}/>
+    <Route path="/video/:movie_id" element={<Video />}/>
     <Route path="/logout" element={<Logout />}/>
 
   </Route>
