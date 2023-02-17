@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import Categories from "../components/Categories/Categories";
-import Banner from "../components/Home/Banner";
 import Popular from "../components/Home/Popular";
 import Search from "../components/Home/Search";
 import Trending from "../components/Home/Trending";
