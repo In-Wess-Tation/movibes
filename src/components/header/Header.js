@@ -26,7 +26,6 @@ const Header = () => {
 
     `
     let normalStyle = {
-        height: "3rem",
         display: "flex", 
         fontSize: "1.5rem",
         height: "4rem",
