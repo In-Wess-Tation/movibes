@@ -78,7 +78,7 @@ const Cast = () => {
             .then((response) => setMembers(response.data))
             .catch(() => setError("Something went wrong..."))
             .finally(() => setLoading(false))
-        }, []);
+        }, [APIKey, movie_id]);
 
 
         useEffect(() => {
@@ -116,7 +116,7 @@ const Cast = () => {
             </div>
             : null
         ))}
-            <p className="line">Stars: {members?.crew.map((member, index) => {if(index < 4) return (<span key={index}>{member.name}, </span>)})}</p>
+            <p className="line">Stars: {members?.crew.map((member, index) => index < 4 && (<span key={index}>{member.name}, </span>))}</p>
 
             <button>Top rated movie #65</button>
             <h2>Top Cast </h2>

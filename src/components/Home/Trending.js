@@ -54,7 +54,7 @@ let APIKey = "8aae96e730d41065f7cfa804530c488a"
         .then((response) => setMovies(response.data.results))
         .catch(() => setError("Something went wrong..."))
         .finally(() => setLoading(false))
-    }, []);
+    }, [APIKey, URLPath]);
 
 
 
