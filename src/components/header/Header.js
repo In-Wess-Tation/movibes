@@ -39,7 +39,6 @@ const Header = () => {
         backgroundColor: "#3dd2cd73",
         textDecoration: "none",
         color: "#3DD2CC",
-        height: "3rem",
         display: "flex", 
         paddingLeft: "2rem",
         fontSize: "1.5rem",

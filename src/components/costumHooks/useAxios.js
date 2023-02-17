@@ -12,7 +12,7 @@ const useAxios = (url) => {
         .then((response) => setData(response.data))
         .catch(() => setError("Something went wrong... "))
         .finally(() => setLoading(false))
-    }, []);
+    }, [url]);
 
     return { data, loading, error }
 }
