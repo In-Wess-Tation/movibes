@@ -30,7 +30,7 @@ const Video = () => {
             .then((response) => setVideos(response.data.results))
             .catch(() => setError("Something went wrong..."))
             .finally(() => setLoading(false))
-        }, []);
+        }, [APIKey, movie_id]);
 
         useEffect(() => {
             if(videos) {

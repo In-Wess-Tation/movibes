@@ -63,7 +63,7 @@ const Banner = () => {
             .then((response) => setMovie(response.data.results[Random]))
             .catch(() => setError("Something went wrong..."))
             .finally(() => setLoading(false))
-        }, []);
+        }, [APIKey]);
 movie && console.log(movie)
     
 
